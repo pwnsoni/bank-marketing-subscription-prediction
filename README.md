@@ -124,7 +124,7 @@ A Streamlit web application was developed to:
 ## 🌐 Deployed App
 
 Try the live app here:  
-👉 <https://share.streamlit.io/your-username/your-repo>
+👉 <https://bank-marketing-subscription-prediction.streamlit.app/>
 
 ---
 
