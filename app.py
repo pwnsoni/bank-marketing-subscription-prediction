@@ -53,12 +53,12 @@ def load_model(model_path):
         model = pickle.load(file)
     return model
 
-uploaded_file = st.file_uploader("Upload CSV File", type=["csv"])
+uploaded_file = st.file_uploader("Upload CSV File", type=["csv"], help="Upload a csv file")
 
 if uploaded_file is not None:
 
     try:
-        data = pd.read_csv(uploaded_file, sep=";")
+        data = pd.read_csv(uploaded_file, sep=None, engine="python")
 
         st.subheader("Uploaded Data Preview")
         st.dataframe(data.head())
@@ -101,9 +101,7 @@ if uploaded_file is not None:
             col5.metric("AUC", round(float(auc), 4))
             col6.metric("MCC", round(float(mcc), 4))
 
-            # ------------------------------
             # Confusion Matrix
-            # ------------------------------
 
             st.subheader("🔍 Confusion Matrix")
             cm = confusion_matrix(y, predictions)
@@ -116,11 +114,9 @@ if uploaded_file is not None:
 
             st.dataframe(cm_df)
 
-            # ------------------------------
             # Prediction Output
-            # ------------------------------
 
-            st.subheader("📌 Sample Predictions")
+            st.subheader("Sample Predictions")
             output_df = X.copy()
             output_df["Actual"] = y
             output_df["Predicted"] = predictions

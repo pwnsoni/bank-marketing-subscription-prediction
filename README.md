@@ -121,6 +121,13 @@ A Streamlit web application was developed to:
 
 ---
 
+## 🌐 Deployed App
+
+Try the live app here:  
+👉 <https://share.streamlit.io/your-username/your-repo>
+
+---
+
 ## 🛠 Technologies Used
 
 - Python  
@@ -133,3 +140,7 @@ A Streamlit web application was developed to:
 - Seaborn  
 
 ---
+
+## 🧪 Test Dataset
+
+A `test_data.csv` file is provided in data directory to facilitate testing of the app.
